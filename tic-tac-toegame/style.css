@@ -1,0 +1,149 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+nav ul{
+    list-style-type:none;
+
+}
+nav{
+    background-color: black;
+    color: white;
+    height: 92px;
+
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    /* padding provides internal spacing to an element */
+    /* right click karke console se hi properties change karke dekho lo */
+
+}
+.gameContainer{
+    /* to visaulise different divs in it jjust set the background color of each div 
+     */
+     /* background-color: yellow; */
+     display: flex;
+     /* //
+     //marign auto charo taraf se equal marign deke us div ke center pe aaajaega */
+     justify-content: center;
+     margin-top: 50px;
+
+
+
+}
+
+.box{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* give height in vw to make it responsive 
+     */
+     font-size: 8vw;
+}
+.box:hover{
+   background-color: rgb(228, 122, 228);
+}
+.container{
+    display: grid;
+    /* we will also define rows and columns in this div 
+    */
+    grid-template-rows: repeat( 3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+
+
+}
+.info{
+    font-size: 25px;
+}
+.gameInfo{
+    padding: 0 34px;
+    font-family: 'Baloo Bhaina 2', cursive;
+
+}
+.gameInfo h1{
+    font-size: 1.5rem;
+}
+.imgbox img{
+    width:0;
+    /* note that we will bring this to webpage css usingtransition when any player wons the game
+    
+     b*/
+     transition: width 1s ease-in-out;
+}
+/* if we are using some css properties again and again
+//then we can delcare in utility classes in out css file */
+
+
+
+/* utility classes below */
+
+
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+#reset{
+    margin: 0 23px;
+    padding: 3px 24px;
+    background-color: rgb(241, 170, 241);
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+
+}
+.line{
+    background-color: black;
+    height: 3px;
+    width: 0;
+    
+    
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+
+    /* position is related to its normal  position 
+    //position abosulte wrto its nearest neighbour
+
+     */
+}
+
+@media screen and (max-width:800px){
+
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        font-size: 1.5rem;
+        /* note the above are relative units in css */
+    }
+    .container{
+        display: grid;
+        grid-template-rows: repeat (3,20vw );
+        grid-template-columns: repeat ( 3 ,20vw);
+    }
+}
